@@ -1,0 +1,34 @@
+
+##Creating routes
+
+1.) Configure a new route on the /mock path to direct traffic to the example_service service created earlier:
+
+curl -i -X POST http://localhost:8001/services/example_service/routes \
+  --data 'paths[]=/mock' \
+  --data name=example_route
+
+
+
+2.)Viewing route configuration
+
+The route URL can take either of the following forms:
+
+/services/{service name or id}/routes/{route name or id}
+/routes/{route name or id}
+
+To view the current state of the example_route route, make a GET request to the route URL:
+
+curl -X GET http://localhost:8001/services/example_service/routes/example_route
+
+
+3.)Updating routes
+curl --request PATCH \
+  --url localhost:8001/services/example_service/routes/example_route \
+  --data tags="tutorial"
+
+
+
+
+4.)Listing routes
+curl http://localhost:8001/routes
+
