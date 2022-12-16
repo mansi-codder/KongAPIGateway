@@ -1,0 +1,21 @@
+Creating services
+
+#To add a new service, send a POST request to Kong Gateway’s Admin API /services route:
+
+curl -i -s -X POST http://localhost:8001/services \
+  --data name=example_service \
+  --data url='http://mockbin.org'
+
+
+#Viewing service configuration
+curl -X GET http://localhost:8001/services/example_service
+
+
+#Updating services
+curl --request PATCH \
+  --url localhost:8001/services/example_service \
+  --data retries=6
+
+
+#Listing services
+curl -X GET http://localhost:8001/services
