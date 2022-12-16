@@ -12,13 +12,13 @@ run command **_docker-compose up -d_**
 ### For windows 
 
 change image name in migration :
-kong-migration:
+####kong-migration:
     container_name: kong-migration
     image: kong:2.1.4-alpine
 
 
 change image name in kong container :
-kong:
+####kong:
     container_name: kong
     image: kong:2.1.4-alpine
 
